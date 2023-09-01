@@ -1,0 +1,41 @@
+theory part:
+Risks:
+- Technical glitches in the app could undermine trust and discourage usage.
+- Inaccurate AI predictions could lead to poor crop management decisions.
+- Over-reliance on technology might deter farmers from traditional knowledge.
+
+Tools and Techniques:
+- AI and machine learning algorithms for data analysis, including neural networks for image recognition and natural language processing for personalized advice.
+- Mobile app development frameworks for cross-platform accessibility.
+- Internet-of-Things sensors for real-time data collection on weather conditions and soil moisture.
+
+By combining these tools and techniques, AgriPal aims to create a holistic solution that empowers farmers with actionable insights, 
+fosters informed decision-making and ultimately contributes to the growth and well-being of rural communities.
+
+
+
+
+Practical part:
+def estimate_precipitation_chance( pressure,humidity,cloud_cover, ):
+    
+    humidity_threshold = 0.6
+    cloud_cover_threshold = 0.7
+    pressure_threshold = 1010
+    
+    precipitation_chance = 0
+
+    
+    if humidity >= humidity_threshold:
+        precipitation_chance += 30  
+    if cloud_cover >= cloud_cover_threshold:
+        precipitation_chance += 40  
+    if pressure <= pressure_threshold:
+        precipitation_chance += 20 
+
+     precipitation_chance = min(precipitation_chance, 100)
+
+   return precipitation_chance
+
+precipitation_chance = estimate_precipitation_chance( pressure,humidity,cloud_cover,)
+print(f"Estimated Precipitation Chance: {precipitation_chance}%")
+
